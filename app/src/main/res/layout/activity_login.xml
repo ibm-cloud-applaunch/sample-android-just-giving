@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    tools:context="com.ibm.applaunch.sample_just_giving.LoginActivity">
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/applaunch_logo"
+        android:id="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageViewGiving"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView"
+        android:src="@drawable/giving" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageViewGiving"
+        android:layout_marginStart="21dp"
+        android:text="Just \nGiving"
+        android:textColor="@color/colorPrimary"
+        android:textSize="48dp"
+        android:typeface="serif" />
+
+
+    <Button
+        android:id="@+id/tv_login"
+        android:layout_width="181dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/imageView"
+        android:layout_alignEnd="@+id/tv_login_as_guest"
+        android:background="@color/colorPrimary"
+        android:padding="20dp"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_login_as_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView"
+        android:padding="20dp"
+        android:text="Continue as guest"
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
