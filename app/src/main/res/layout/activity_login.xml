@@ -10,8 +10,8 @@
 
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/applaunch_logo"
@@ -40,10 +40,10 @@
 
     <Button
         android:id="@+id/tv_login"
-        android:layout_width="181dp"
+        android:layout_width="220dp"
         android:layout_height="70dp"
-        android:layout_above="@+id/imageView"
-        android:layout_alignEnd="@+id/tv_login_as_guest"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:background="@color/colorPrimary"
         android:padding="20dp"
         android:text="Login"
@@ -61,16 +61,26 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/tv_login_as_guest"
+    <EditText
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toStartOf="@+id/imageView"
-        android:padding="20dp"
-        android:text="Continue as guest"
-        android:textColor="@android:color/primary_text_light"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_alignStart="@+id/tv_login"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="name" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/username"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

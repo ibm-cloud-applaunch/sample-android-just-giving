@@ -17,6 +17,8 @@ import com.ibm.mobile.applaunch.android.api.AppLaunchUser;
 import com.ibm.mobile.applaunch.android.api.ICRegion;
 import com.ibm.mobile.applaunch.android.api.RefreshPolicy;
 
+import org.w3c.dom.Text;
+
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -30,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements AppLaunchListene
     private static final String TAG = LoginActivity.class.getSimpleName();
 
     private TextView tvLogin, tvLoginAsGuest;
+    private TextView username,password;
     private View contentView;
     private ProgressBar progressBar;
     private PublishSubject<Boolean> showLoader = PublishSubject.create();
@@ -46,7 +49,8 @@ public class LoginActivity extends AppCompatActivity implements AppLaunchListene
         final Intent i = new Intent(this, DashboardActivity.class);
 
         tvLogin = findViewById(R.id.tv_login);
-        tvLoginAsGuest = findViewById(R.id.tv_login_as_guest);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
 
 
@@ -57,12 +61,7 @@ public class LoginActivity extends AppCompatActivity implements AppLaunchListene
             }
         });
 
-        tvLoginAsGuest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initSDK("guest");
-            }
-        });
+
 
         showLoader.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
@@ -99,9 +98,9 @@ public class LoginActivity extends AppCompatActivity implements AppLaunchListene
                 eventFlushInterval(10).
                 cacheExpiration(10).
                 fetchPolicy(RefreshPolicy.REFRESH_ON_EVERY_START).
-                deviceId("dfsgggggggdfqqsdfgsdfggsdfgsdfg"+userType).
+                deviceId(username.getText()+userType).
                 build();
-        AppLaunchUser appLaunchUser = new AppLaunchUser.Builder().userId("dfsgggqqeeggggdfgsdfgsdfg"+userType).custom("userType", userType).build();
+        AppLaunchUser appLaunchUser = new AppLaunchUser.Builder().userId(username.getText()+userType).custom("userType", userType).build();
         AppLaunch.getInstance().init(getApplication(), ICRegion.US_SOUTH_STAGING, APP_GUID, CLIENT_SECRET, appLaunchConfig, appLaunchUser, this);
     }
 
