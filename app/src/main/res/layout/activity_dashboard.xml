@@ -19,27 +19,26 @@
         android:id="@+id/textView2" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="24dp"
         android:text="Your Help means a lot!"
         android:textColor="@android:color/primary_text_light"
-        android:textSize="26dp"
-        android:id="@+id/textView3" />
+        android:textSize="26dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="49dp"
+        android:layout_above="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginBottom="14dp"
         android:text="Your gesture in donating to a greater cause is the much needed step in creating a better world."
         android:textColor="@android:color/primary_text_light"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:id="@+id/textView4" />
 
     <Button
         android:layout_width="match_parent"
@@ -53,6 +52,45 @@
         android:textColor="#fff"
         android:text="Donate Now"
         android:id="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginBottom="95dp"
+        android:text="Total Amount\nDonated" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignTop="@+id/textView5"
+        android:layout_marginEnd="20dp"
+        android:text="Number of\ncontributors" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView5"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginBottom="29dp"
+        android:layout_marginStart="21dp"
+        android:text="$ 4,036,780"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView7"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignEnd="@+id/textView6"
+        android:text="46,000"
+        android:textSize="26sp" />
 
 
 </RelativeLayout>
