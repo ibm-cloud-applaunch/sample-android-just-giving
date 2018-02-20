@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ibm.mobile.applaunch.android.AppLaunchFailResponse;
 import com.ibm.mobile.applaunch.android.AppLaunchResponse;
@@ -112,7 +113,23 @@ public class LoginActivity extends AppCompatActivity implements AppLaunchListene
 
     @Override
     public void onFailure(AppLaunchFailResponse appLaunchFailResponse) {
-        Log.i(TAG, appLaunchFailResponse.toString());
-        showLoader.onNext(true);
+
+        AppLaunch.getInstance().destroy(new AppLaunchListener() {
+            @Override
+            public void onSuccess(AppLaunchResponse appLaunchResponse) {
+            }
+
+            @Override
+            public void onFailure(AppLaunchFailResponse appLaunchFailResponse) {
+            }
+        });
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(LoginActivity.this,"Failed to connect. Try again later.", Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 }
